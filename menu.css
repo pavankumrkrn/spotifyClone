@@ -1,0 +1,51 @@
+li {
+    color: rgb(155, 155, 153) !important;
+}
+.normal {
+    color: rgb(155, 155, 153) !important;
+}
+li:hover {
+    color : white;
+    font-weight: bolder;
+}
+.small {
+     font-size: small;
+     font: italic;
+ }
+
+.mainleft {
+    position: absolute;
+    min-width: 250px !important;
+    left: 0 !important;
+}
+
+.bottom {
+    position: absolute;
+    bottom : 0 !important
+}
+.right {
+    position: absolute;
+    right: 0 !important;
+}
+
+.bordered {
+    width: 100px;
+    border-radius: 20px;
+}
+
+.card {
+    background-color: rgb(66, 66, 66);
+}
+
+tr:hover {
+ background-color: grey;
+ color: black;
+}
+
+
+@media screen and (max-width : 500px) {
+    .mainleft {
+        width: 300px !important;
+    }
+}
+
