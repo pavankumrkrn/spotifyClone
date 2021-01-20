@@ -169,9 +169,10 @@ const renderTracks = async (p, mode) => {
         let thead = createElement('thead');
         let tr1 = createElement('tr');
         let th1 = createTD('Title');
-        let th2 = createTD('Artist')
+        let th2 = createTD('Artist');
+        let th4 = createTD('')
         let th3 = createTD('Add to PlayList')
-        tr1.append(th1, th2, th3);
+        tr1.append(th4, th1, th2, th3);
         thead.append(tr1);
         let tbody = createElement('tbody');
         for (let i in data.items) {
