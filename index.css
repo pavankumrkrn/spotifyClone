@@ -13,6 +13,14 @@ body {
     padding: 50px;
 }
 
+.error {
+  border: 1px solid rgba(224, 3, 88, 0.89) !important;
+  padding: 20px;
+  margin: 20px;
+  background-color: rgba(247, 181, 206, 0.89);
+  border-radius: 3px;
+}
+
 .card {
     border-radius: 7px;
     background-color: black;
