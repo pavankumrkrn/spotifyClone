@@ -56,17 +56,24 @@
                                 </p>
                             </div>
                             <div class="cardButtons">
-                                <div class="input-group mb-3">
-                                    <input type="text" id='name' class="form-control bg-dark" placeholder="Email or username">
-                                </div>
-                                <div class="input-group mb-2">
-                                    <input type="password" id='pass' class="form-control bg-dark" placeholder="password">
-                                </div>
-                                
-                                <button class="btn btn-light btn-block" id='login'
-                                    style="border-radius: 20px !important;" onclick='login()'>
-                                    Login
-                                </button>
+                                <form action="" id='loginForm'>
+                                    <div class="input-group mb-3">
+                                        <input type="text" id='emailLogin' class="form-control bg-dark text-white" autocomplete="off"
+                                            placeholder="Email or username" required>
+                                    </div>
+                                    <div class="input-group mb-5">
+                                        <input type="password" id='passwordLogin' class="form-control bg-dark text-white" autocomplete="off"
+                                            placeholder="password" required>
+                                    </div>
+
+                                    <button class="btn btn-light btn-block mt-3" 
+                                        style="border-radius: 20px !important;" type="submit">
+                                        Login
+                                    </button>
+                                </form>
+                                <p class="text-center mt-5 mb-5 error" style="display: none;" id='loginError'>
+                                    <i class="fas fa-times-circle"></i> User Not Found
+                                </p>
                                 <p class="text-center mt-3" style="color: gainsboro;">
                                     OR
                                 </p>
@@ -91,31 +98,37 @@
                                     Sign Up for a free spotify account.
                                 </p>
                                 <div class="cardButtons">
-                                    <div class="input-group mb-3">
-                                        <input type="text" id='email' class="form-control bg-dark" placeholder="Email or username">
-                                    </div>
-                                    <div class="input-group mb-3">
-                                        <input type="password" id='password' class="form-control bg-dark" placeholder="password">
-                                    </div>
-                                    <div class="input-group mb-4">
-                                        <input type="text" class="form-control bg-dark" id='name'
-                                            placeholder="What should we call you?">
-                                    </div>
-                                    <button class="btn btn-success btn-block" id='login'
-                                        style="border-radius: 20px !important;" onclick='signUp()'>
-                                        Create Account
-                                    </button>
+                                    <form id='signUpForm'>
+                                        <div class="input-group mb-3">
+                                            <input type="text" id='email' class="form-control bg-dark text-white" autocomplete="off"
+                                                placeholder="Email or username" required>
+                                        </div>
+                                        <div class="input-group mb-3">
+                                            <input type="password" id='password' class="form-control bg-dark text-white" autocomplete="off"
+                                                placeholder="password" required>
+                                        </div>
+                                        <div class="input-group mb-4">
+                                            <input type="text" class="form-control bg-dark text-white" autocomplete="off" id='name'
+                                                placeholder="What should we call you?" required>
+                                        </div>
+                                        <button class="btn btn-success btn-block" type="submit"
+                                            style="border-radius: 20px !important;">
+                                            Create Account
+                                        </button>
+                                    </form>
+                                    <p class="text-center mt-5 mb-5 error" style="display: none;" id='signUpError'>
+                                        <i class="fas fa-times-circle"></i> Email id already exists
+                                    </p>
                                     <p class="text-center mt-3" style="color: gainsboro;">
                                         OR
                                     </p>
                                     <p class="text-center mt-3" style="color: gainsboro;">
-                                        <b><a class='ml-2'
-                                             href="#" onclick="hideSignUpCard('back')"
-                                             style="color: gainsboro;">BACK</a></b>
+                                        <b><a class='ml-2' href="#" onclick="hideSignUpCard('back')"
+                                                style="color: gainsboro;">BACK</a></b>
                                     </p>
                                     <p class="text-center mt-3" style="color: gainsboro;">
-                                        Already on Spotify ? <b><u> <a class='ml-2' 
-                                                    href="#" onclick="hideSignUpCard('login')"
+                                        Already on Spotify ? <b><u> <a class='ml-2' href="#"
+                                                    onclick="hideSignUpCard('login')"
                                                     style="color: gainsboro;">LOGIN</a> </u></b>
                                     </p>
                                 </div>
@@ -125,6 +138,30 @@
                 </div>
             </div>
         </div>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-app.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-database.js"></script>
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+        <script src="https://www.gstatic.com/firebasejs/8.2.4/firebase-analytics.js"></script>
+
+        <script>
+            // Your web app's Firebase configuration
+            // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+            var firebaseConfig = {
+                apiKey: "AIzaSyBpLGyC72UfTA5qNxJo0Q3npUdmnblTNwg",
+                authDomain: "spotify-clone-3c648.firebaseapp.com",
+                databaseURL: "https://spotify-clone-3c648-default-rtdb.firebaseio.com",
+                projectId: "spotify-clone-3c648",
+                storageBucket: "spotify-clone-3c648.appspot.com",
+                messagingSenderId: "24387284675",
+                appId: "1:24387284675:web:95f37dd3b13884f28c3c76",
+                measurementId: "G-DZ2J7LVNES"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+            firebase.analytics();
+        </script>
         <script src="index.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
             integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
