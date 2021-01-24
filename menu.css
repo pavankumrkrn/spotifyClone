@@ -4,19 +4,47 @@ li {
 .normal {
     color: rgb(155, 155, 153) !important;
 }
-li:hover {
-    color : white;
+.big:hover {
+    color : white !important;
     font-weight: bolder;
+    
+}
+
+.liActive {
+    border-left: 2px solid green;
+    padding-left: 20px;
+    color : white !important;
+    font-weight: bolder;
+}
+
+.big, .card {
+    cursor: pointer;
 }
 .small {
      font-size: small;
      font: italic;
  }
 
+.cursor {
+    cursor: pointer;
+}
+
+.cursor:hover {
+    font-size: xx-large;
+}
+
 .mainleft {
     position: absolute;
     min-width: 250px !important;
     left: 0 !important;
+}
+
+.likeTag:hover {
+    color: rgb(0, 174, 255) !important;
+}
+
+.active {
+    color: rgb(0, 174, 255) !important;
 }
 
 .bottom {
@@ -31,6 +59,16 @@ li:hover {
 .bordered {
     width: 100px;
     border-radius: 20px;
+}
+
+
+.popover-body:hover {
+    cursor: pointer;
+    font-weight: bolder;
+    border: 2px solid #212529 !important;
+    background-color: #212529 !important;
+    border-radius: 5px !important;
+    
 }
 
 .card {
